@@ -7,7 +7,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 	vertexCount = 36;
 
 	vertices = new Vertex[vertexCount];
-
+	//The letters are INDICES and they keep track of VERTICES
 	setVertexPosition(vertices, vertexCount, 0, { -1.0f,  1.0f, -1.0f }); //A
 	setVertexPosition(vertices, vertexCount, 1, {  1.0f,  1.0f,  1.0f }); //B
 	setVertexPosition(vertices, vertexCount, 2, {  1.0f, -1.0f, -1.0f }); //C
