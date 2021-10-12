@@ -8,20 +8,22 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tr
 
 	vertices = new Vertex[vertexCount];
 
-	setVertexPosition(vertices, vertexCount, 0, { -0.5f,  0.5f, -0.5f }); //A
-	setVertexPosition(vertices, vertexCount, 0, {  0.5f,  0.5f,  0.5f }); //B
-	setVertexPosition(vertices, vertexCount, 0, {  0.5f, -0.5f, -0.5f }); //C
-	setVertexPosition(vertices, vertexCount, 0, { -0.5f, -0.5f,  0.5f }); //D
-	setVertexPosition(vertices, vertexCount, 0, {  0.5f,  0.5f, -0.5f }); //E
-	setVertexPosition(vertices, vertexCount, 0, { -0.5f,  0.5f,  0.5f }); //F
-	setVertexPosition(vertices, vertexCount, 0, { -0.5f, -0.5f, -0.5f }); //G
-	setVertexPosition(vertices, vertexCount, 0, {  0.5f, -0.5f,  0.5f }); //H
+	setVertexPosition(vertices, vertexCount, 0, { -1.0f,  1.0f, -1.0f }); //A
+	setVertexPosition(vertices, vertexCount, 1, {  1.0f,  1.0f,  1.0f }); //B
+	setVertexPosition(vertices, vertexCount, 2, {  1.0f, -1.0f, -1.0f }); //C
+	setVertexPosition(vertices, vertexCount, 3, { -1.0f, -1.0f,  1.0f }); //D
+	setVertexPosition(vertices, vertexCount, 4, {  1.0f,  1.0f, -1.0f }); //E
+	setVertexPosition(vertices, vertexCount, 5, { -1.0f,  1.0f,  1.0f }); //F
+	setVertexPosition(vertices, vertexCount, 6, { -1.0f, -1.0f, -1.0f }); //G
+	setVertexPosition(vertices, vertexCount, 7, {  1.0f, -1.0f,  1.0f }); //H
 
 	return vertices;
 }
 
-	void Cube::setVertexPosition(Vertex* vertices, int vertexCount, int index, glm::vec3 position) {
+	void Cube::setVertexPosition(Vertex* vertices, int vertexCount, int index, glm::vec3 coordinates) {
 		for (int i = index; i < vertexCount; i += 8) {
-			vertices[i].position = glm::vec4(position, 1.0f);
+			vertices[i].position = glm::vec4(coordinates * 0.5f, 1.0f);
+			vertices[i].normal = glm::vec4(coordinates, 0.0f);
+			vertices[i].color = m_color;
 		}
 	}

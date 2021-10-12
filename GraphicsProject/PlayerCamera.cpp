@@ -6,10 +6,11 @@ void PlayerCamera::onUpdate(float deltaTime)
     GLFWwindow* window = glfwGetCurrentContext();
 
     int keyForward = GLFW_KEY_W;
+    int keyFast = GLFW_KEY_LEFT_SHIFT;
     int keyBack = GLFW_KEY_S;
     int keyLeft = GLFW_KEY_A;
     int keyRight = GLFW_KEY_D;
-    int keyUp = GLFW_KEY_E;
+    int keyUp = GLFW_KEY_SPACE;
     int keyDown = GLFW_KEY_Q;
 
     //Get the direction vectors
@@ -19,26 +20,50 @@ void PlayerCamera::onUpdate(float deltaTime)
 
     //Check input
     if (glfwGetKey(window, keyForward)) {
+        if (glfwGetKey(window, keyFast)) {
+            //Move forward
+            getTransform()->translate(forward * (m_moveSpeed * 2) * (float)deltaTime);
+        }
         //Move forward
         getTransform()->translate(forward * m_moveSpeed * (float)deltaTime);
     }
     if (glfwGetKey(window, keyBack)) {
+        if (glfwGetKey(window, keyFast)) {
+            //Move forward
+            getTransform()->translate(-forward * (m_moveSpeed * 2) * (float)deltaTime);
+        }
         //Move back
         getTransform()->translate(-forward * m_moveSpeed * (float)deltaTime);
     }
     if (glfwGetKey(window, keyLeft)) {
+        if (glfwGetKey(window, keyFast)) {
+            //Move forward
+            getTransform()->translate(-right * (m_moveSpeed * 2) * (float)deltaTime);
+        }
         //Move left
         getTransform()->translate(-right * m_moveSpeed * (float)deltaTime);
     }
     if (glfwGetKey(window, keyRight)) {
+        if (glfwGetKey(window, keyFast)) {
+            //Move forward
+            getTransform()->translate(right * (m_moveSpeed * 2) * (float)deltaTime);
+        }
         //Move right
         getTransform()->translate(right * m_moveSpeed * (float)deltaTime);
     }
     if (glfwGetKey(window, keyUp)) {
+        if (glfwGetKey(window, keyFast)) {
+            //Move forward
+            getTransform()->translate(up * (m_moveSpeed * 2) * (float)deltaTime);
+        }
         //Move up
         getTransform()->translate(up * m_moveSpeed * (float)deltaTime);
     }
     if (glfwGetKey(window, keyDown)) {
+        if (glfwGetKey(window, keyFast)) {
+            //Move forward
+            getTransform()->translate(-up * (m_moveSpeed * 2) * (float)deltaTime);
+        }
         //Move down
         getTransform()->translate(-up * m_moveSpeed * (float)deltaTime);
     }
