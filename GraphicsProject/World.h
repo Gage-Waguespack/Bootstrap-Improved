@@ -31,7 +31,7 @@ public:
 
 private:
 	Quad m_quad = Quad(glm::vec4(0.2f, 0.8f, 0.6f, 1.0f));
-	aie::Texture m_marbleDiffuse;
+	aie::Texture m_tableDiffuse;
 	Camera* m_camera = nullptr;
 
 	std::list<Entity*> entities;

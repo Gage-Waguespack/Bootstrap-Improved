@@ -206,7 +206,8 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="RedAndBlackMarble.jpg" />
+    <Image Include="earth_diffuse.jpg" />
+    <Image Include="marble_diffuse.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

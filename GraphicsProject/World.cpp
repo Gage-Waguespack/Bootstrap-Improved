@@ -6,6 +6,12 @@ void World::start()
 {
 	onStart();
 	m_started = true;
+
+	//Initialize the quad
+	m_quad.onStart();
+	if (!m_tableDiffuse.load("earth_diffuse.jpg")) {
+		printf("Failed to load texture.\n");
+	}
 }
 
 void World::update(float deltaTime)
@@ -40,6 +46,7 @@ void World::update(float deltaTime)
 
 void World::draw()
 {
+	//The program ID
 	int program = -1;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &program);
 	if (program == -1)
@@ -49,9 +56,11 @@ void World::draw()
 	if (diffuseTextureUniform >= 0)
 		glUniform1i(diffuseTextureUniform, 0);
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, m_marbleDiffuse.getHandle());
+	glBindTexture(GL_TEXTURE_2D, m_tableDiffuse.getHandle());
+
 
 	m_quad.draw();
+	m_quad.onDraw();
 	onDraw();
 
 	for (Entity* entity : entities) {
@@ -62,6 +71,7 @@ void World::draw()
 void World::end()
 {
 	onEnd();
+	m_quad.onEnd();
 }
 
 void World::add(Entity* entity)
@@ -81,4 +91,6 @@ void World::destroy(Entity* entity)
 	addList.remove(entity);
 	removeList.remove(entity);
 	destroyList.push_back(entity);
+	m_quad.onEnd();
+	m_quad.end();
 }

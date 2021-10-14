@@ -143,7 +143,10 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="RedAndBlackMarble.jpg">
+    <Image Include="marble_diffuse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="earth_diffuse.jpg">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
