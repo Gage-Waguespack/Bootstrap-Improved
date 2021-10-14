@@ -9,19 +9,30 @@ void DragonWorld::onStart()
 	setCamera(m_camera);
 	add(m_camera);
 
+#pragma region Light
 	//Light
 	m_light = new Light(
-		{ 1.0f, 1.0f, 1.0f },
+		{ 1.0f, -1.0f, 1.0f },
 		{0.5f, 0.5f, 0.5f, 1.0f},
 		{1.0f, 1.0f, 1.0f, 1.0f},
 		{1.0f, 1.0f, 1.0f, 1.0f}
 	);
 	add(m_light);
+#pragma endregion
 
+#pragma region Dragon
 	//Dragon
 	m_dragon = new OBJMesh();
 	m_dragon->load("Dragon.obj");
 	add(m_dragon);
+#pragma endregion
+
+#pragma region Cube
+	//Cube
+	m_cube = new Cube();
+	m_cube->setColor(glm::vec4(0.6f, 0.2f, 0.4f, 1.0f));
+	add(m_cube);
+#pragma endregion
 }
 
 void DragonWorld::onEnd()
@@ -29,4 +40,5 @@ void DragonWorld::onEnd()
 	destroy(m_camera);
 	destroy(m_light);
 	destroy(m_dragon);
+	destroy(m_cube);
 }
