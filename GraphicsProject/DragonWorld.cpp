@@ -26,13 +26,6 @@ void DragonWorld::onStart()
 	m_dragon->load("Dragon.obj");
 	add(m_dragon);
 #pragma endregion
-
-#pragma region Cube
-	//Cube
-	m_cube = new Cube();
-	m_cube->setColor(glm::vec4(0.6f, 0.2f, 0.4f, 1.0f));
-	add(m_cube);
-#pragma endregion
 }
 
 void DragonWorld::onEnd()
