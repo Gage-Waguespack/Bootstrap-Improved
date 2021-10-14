@@ -33,5 +33,4 @@ void DragonWorld::onEnd()
 	destroy(m_camera);
 	destroy(m_light);
 	destroy(m_dragon);
-	destroy(m_cube);
 }

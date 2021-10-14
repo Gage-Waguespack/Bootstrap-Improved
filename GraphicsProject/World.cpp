@@ -1,4 +1,6 @@
 #include "World.h"
+#include "gl_core_4_4.h"
+#include "glm/ext.hpp"
 
 void World::start()
 {
@@ -38,6 +40,18 @@ void World::update(float deltaTime)
 
 void World::draw()
 {
+	int program = -1;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &program);
+	if (program == -1)
+		printf("No shader bound.\n");
+
+	int diffuseTextureUniform = glGetUniformLocation(program, "diffuseTexture");
+	if (diffuseTextureUniform >= 0)
+		glUniform1i(diffuseTextureUniform, 0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_marbleDiffuse.getHandle());
+
+	m_quad.draw();
 	onDraw();
 
 	for (Entity* entity : entities) {

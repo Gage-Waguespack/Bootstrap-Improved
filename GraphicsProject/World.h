@@ -1,6 +1,8 @@
 #pragma once
 #include "Entity.h"
 #include "Camera.h"
+#include "Quad.h"
+#include "Texture.h"
 #include "Shader.h"
 #include <list>
 
@@ -28,6 +30,8 @@ public:
 	void setCamera(Camera* camera) { m_camera = camera; }
 
 private:
+	Quad m_quad = Quad(glm::vec4(0.2f, 0.8f, 0.6f, 1.0f));
+	aie::Texture m_marbleDiffuse;
 	Camera* m_camera = nullptr;
 
 	std::list<Entity*> entities;
