@@ -1,9 +1,8 @@
 #include "Cube.h"
 
-Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& triCount)
+Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount)
 {
 	Vertex* vertices = nullptr;
-	triCount = 12;
 	vertexCount = 36;
 
 	vertices = new Vertex[vertexCount];
