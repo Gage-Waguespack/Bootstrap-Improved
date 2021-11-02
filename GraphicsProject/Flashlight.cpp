@@ -40,6 +40,7 @@ void Flashlight::onDraw()
 	if (lightSpecular >= 0) {
 		glUniform3f(lightSpecular, m_specular.x, m_specular.y, m_specular.z);
 	}
+
 	//Clamp the light
 	float theta = glm::dot(m_direction, glm::normalize(-m_direction));
 	float epsilon = m_innerCutOff - m_outterCutOff;

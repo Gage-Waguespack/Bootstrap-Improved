@@ -13,8 +13,8 @@ public:
 	void onDraw() override;
 
 	//Light Position
-	glm::vec3 getPosition();
-	void setPosition(glm::vec3 position);
+	glm::vec3 getPosition() { return m_position; }
+	void setPosition(glm::vec3 position) { m_position = position; }
 	//Light Direction
 	glm::vec3 getDirection();
 	void setDirection(glm::vec3 direction);
@@ -34,8 +34,6 @@ public:
 	float getOutterCutOff() { return m_outterCutOff; }
 	void setOutterCutOff(float outterCutOff) { m_outterCutOff = outterCutOff; }
 
-	void clamp();
-
 private:
     glm::vec3  m_position = glm::vec3(0.0f);
     glm::vec3  m_direction = glm::vec3(0.0f);
@@ -44,7 +42,7 @@ private:
 	glm::vec4 m_diffuse = glm::vec4(0.0f);
 	glm::vec4 m_specular = glm::vec4(0.0f);
 
-    float m_innerCutOff;
-	float m_outterCutOff;
+    float m_innerCutOff = 12.5f;
+	float m_outterCutOff = 17.5f;
 };
 
