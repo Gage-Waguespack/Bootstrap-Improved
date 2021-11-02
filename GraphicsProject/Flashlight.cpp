@@ -47,8 +47,8 @@ void Flashlight::onDraw()
 	float intensity = glm::clamp((theta - m_outterCutOff) / epsilon, 0.0f, 1.0f);
 
 	//Change the intensity of the lights (leaving out ambient so that we always have light)
-	setDiffuse(getDiffuse() *= intensity);
-	setSpecular(getSpecular() *= intensity);
+	/*setDiffuse(getDiffuse() *= intensity);
+	setSpecular(getSpecular() *= intensity);*/
 }
 
 glm::vec3 Flashlight::getDirection()
