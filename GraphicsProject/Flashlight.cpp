@@ -1,6 +1,7 @@
 #include "Flashlight.h"
 #include "gl_core_4_4.h"
 
+
 Flashlight::Flashlight(glm::vec3 position, glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular, float innerCutOff, float outterCutOff)
 {
 	setPosition(position);
@@ -22,10 +23,10 @@ void Flashlight::onDraw()
 		return;
 	}
 
-	int lightDirection = glGetUniformLocation(program, "iDirection");
-	int lightAmbient = glGetUniformLocation(program, "iAmbient");
-	int lightDiffuse = glGetUniformLocation(program, "iDiffuse");
-	int lightSpecular = glGetUniformLocation(program, "iSpecular");
+	int lightDirection = glGetUniformLocation(program, "iDirectionF");
+	int lightAmbient = glGetUniformLocation(program, "iAmbientF");
+	int lightDiffuse = glGetUniformLocation(program, "iDiffuseF");
+	int lightSpecular = glGetUniformLocation(program, "iSpecularF");
 
 	if (lightDirection >= 0) {
 		glm::vec3 direction = getDirection();

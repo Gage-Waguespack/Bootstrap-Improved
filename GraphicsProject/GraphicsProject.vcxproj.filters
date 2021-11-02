@@ -118,9 +118,6 @@
     <None Include="fragment.shader">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="vertex.shader">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="Dragon.mtl">
       <Filter>Resource Files</Filter>
     </None>
@@ -131,6 +128,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Bunny.mtl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="vertex.shader">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

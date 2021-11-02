@@ -44,6 +44,12 @@ void DragonWorld::onStart()
 #pragma endregion
 }
 
+void DragonWorld::onUpdate(float deltaTime)
+{
+	m_flashlight->setPosition(m_camera->getTransform()->getPosition());
+	m_flashlight->getTransform()->setForward(m_camera->getTransform()->getForward());
+}
+
 void DragonWorld::onEnd()
 {
 	destroy(m_camera);

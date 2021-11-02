@@ -9,6 +9,7 @@ class DragonWorld : public World
 {
 public:
 	void onStart() override;
+	void onUpdate(float deltaTime) override;
 	void onEnd() override;
 
 private:
