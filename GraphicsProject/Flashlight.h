@@ -7,8 +7,10 @@ class Flashlight : public Entity
 {
 public:
     Flashlight() {}
-    Flashlight(glm::vec3 position, glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular, float cutOff);
+    Flashlight(glm::vec3 position, glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular, float innerCutOff, float outterCutOff);
     ~Flashlight() {}
+
+	void onDraw() override;
 
 	//Light Position
 	glm::vec3 getPosition();
@@ -25,13 +27,24 @@ public:
 	//Specular Color
 	glm::vec4 getSpecular() { return m_specular; }
 	void setSpecular(glm::vec4 specular) { m_specular = specular; }
+	//Light InnerCutOff
+	float getInnerCutOff() { return m_innerCutOff; }
+	void setInnerCutOff(float innerCutOff) { m_innerCutOff = innerCutOff; }
+	//Light OutterCutOff
+	float getOutterCutOff() { return m_outterCutOff; }
+	void setOutterCutOff(float outterCutOff) { m_outterCutOff = outterCutOff; }
+
+	void clamp();
 
 private:
     glm::vec3  m_position = glm::vec3(0.0f);
     glm::vec3  m_direction = glm::vec3(0.0f);
+
 	glm::vec4 m_ambient = glm::vec4(0.0f);
 	glm::vec4 m_diffuse = glm::vec4(0.0f);
 	glm::vec4 m_specular = glm::vec4(0.0f);
-    float m_cutOff;
+
+    float m_innerCutOff;
+	float m_outterCutOff;
 };
 
