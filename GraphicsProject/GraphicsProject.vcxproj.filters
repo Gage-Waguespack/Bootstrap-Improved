@@ -60,6 +60,9 @@
     <ClCompile Include="DragonWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Flashlight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -107,12 +110,12 @@
     <ClInclude Include="DragonWorld.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Flashlight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragment.shader">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="vertex.shader">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Dragon.mtl">
@@ -125,6 +128,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Bunny.mtl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="vertex.shader">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

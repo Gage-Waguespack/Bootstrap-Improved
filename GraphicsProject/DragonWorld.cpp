@@ -22,6 +22,20 @@ void DragonWorld::onStart()
 	add(m_light);
 #pragma endregion
 
+#pragma region Flashlight
+	//Flashlight
+	m_flashlight = new Flashlight(
+		m_camera->getTransform()->getPosition(),
+		m_camera->getTransform()->getForward(),
+		{ 0.5f, 0.5f, 0.5f, 1.0f },
+		{ 0.0f, 0.0f, 1.0f, 1.0f },
+		{ 1.0f, 0.0f, 0.0f, 1.0f },
+		12.5f,
+		17.5f
+	);
+	add(m_flashlight);
+#pragma endregion
+
 #pragma region Dragon
 	//Dragon
 	m_dragon = new OBJMesh();
@@ -30,9 +44,16 @@ void DragonWorld::onStart()
 #pragma endregion
 }
 
+void DragonWorld::onUpdate(float deltaTime)
+{
+	m_flashlight->setPosition(m_camera->getTransform()->getPosition());
+	m_flashlight->getTransform()->setForward(m_camera->getTransform()->getForward());
+}
+
 void DragonWorld::onEnd()
 {
 	destroy(m_camera);
 	destroy(m_light);
+	destroy(m_flashlight);
 	destroy(m_dragon);
 }
