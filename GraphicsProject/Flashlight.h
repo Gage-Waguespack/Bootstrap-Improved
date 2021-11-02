@@ -3,7 +3,7 @@
 #include "glm/vec3.hpp"
 #include "glm/vec4.hpp"
 
-class Flashlight
+class Flashlight : public Entity
 {
 public:
     Flashlight() {}
