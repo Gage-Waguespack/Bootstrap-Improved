@@ -1,7 +1,6 @@
 #include "Flashlight.h"
 #include "gl_core_4_4.h"
 
-
 Flashlight::Flashlight(glm::vec3 position, glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular, float innerCutOff, float outterCutOff)
 {
 	setPosition(position);
