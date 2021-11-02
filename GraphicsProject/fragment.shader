@@ -26,7 +26,7 @@ out vec4 pColor;
 void main() {
 	vec3 kNormal = normalize(fNormal.xyz);
 	vec3 iNormal = normalize(iDirection);
-	vec3 iNormalF = normalize(iDirection);
+	vec3 iNormalF = normalize(iDirectionF);
 
 	//Light
 	//Calculate ambient color
@@ -58,7 +58,7 @@ void main() {
 
 	//Calculate specular color
 	vec3 surfaceToViewF = normalize(cameraPosition - fPosition.xyz);
-	vec3 reflectionNormalF = reflect(iNormal, kNormal);
+	vec3 reflectionNormalF = reflect(iNormalF, kNormal);
 	float specularTermF = dot(surfaceToViewF, reflectionNormalF);
 	specularTermF = max(0.0f, specularTermF);
 	specularTermF = pow(specularTermF, kSpecularPower);
