@@ -19,7 +19,7 @@ void DragonWorld::onStart()
 		{1.0f, 1.0f, 1.0f, 1.0f},
 		{1.0f, 1.0f, 1.0f, 1.0f}
 	);
-	//add(m_light);
+	add(m_light);
 #pragma endregion
 
 #pragma region Flashlight
