@@ -28,8 +28,8 @@ void DragonWorld::onStart()
 		m_camera->getTransform()->getPosition(),
 		m_camera->getTransform()->getForward(),
 		{ 0.5f, 0.5f, 0.5f, 1.0f },
-		{ 0.0f, 0.0f, 1.0f, 1.0f },
-		{ 1.0f, 0.0f, 0.0f, 1.0f },
+		{ 1.0f, 0.0f, 1.0f, 1.0f },
+		{ 1.0f, 0.0f, 1.0f, 1.0f },
 		12.5f,
 		17.5f
 	);

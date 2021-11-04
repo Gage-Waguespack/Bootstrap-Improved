@@ -3,6 +3,7 @@
 in vec4 fPosition;
 in vec4 fNormal;
 in vec4 fColor;
+in vec2 fTexCoord;
 
 uniform vec3 kAmbient;
 uniform vec3 kDiffuse;
@@ -20,6 +21,7 @@ uniform vec3 iDiffuseF;
 uniform vec3 iSpecularF;
 
 uniform vec3 cameraPosition;
+uniform sampler2D diffuseTexture;
 
 out vec4 pColor;
 
@@ -66,5 +68,5 @@ void main() {
 
 	vec4 fColor = vec4(ambientColorF + diffuseColorF + specularColorF, 1.0f);
 
-	pColor = lColor + fColor;
+	pColor = lColor + fColor * texture(diffuseTexture, fTexCoord);
 }
