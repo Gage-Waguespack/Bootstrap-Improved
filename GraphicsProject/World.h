@@ -30,7 +30,7 @@ public:
 	void setCamera(Camera* camera) { m_camera = camera; }
 
 private:
-	Quad m_quad = Quad(glm::vec4(0.2f, 0.8f, 0.6f, 1.0f));
+	Quad m_quad = Quad(glm::vec4(0.25f, 0.25f, 0.25f, 0.25f));
 	aie::Texture m_tableDiffuse;
 	Camera* m_camera = nullptr;
 
