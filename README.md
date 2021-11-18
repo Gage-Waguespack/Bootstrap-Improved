@@ -1,3 +1,22 @@
+# How to use this project
+
+Open the bootstrap folder and run <b>GraphicsProject.exe</b>
+
+### Controls
+
+<b>Mouse</b> to look around
+
+<b>Space</b> to go up on the camera's axis
+
+<b>Q</b> to go down on the camera's axis
+
+### What to look for
+
+You may notice there is a light in the scene, however, there's a second light attached to the camera
+and this light gives a purple glow to any and all objects that the camera faces. What this means is
+that if you circle an object in different positions, you may notice that the light is affected by how
+you look at an object.
+
 # aieBootstrap
 
 *NOTE: This project is no longer being actively maintained*
