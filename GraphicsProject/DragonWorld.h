@@ -13,7 +13,7 @@ public:
 	void onEnd() override;
 
 private:
-	Quad m_quad = Quad(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	Quad m_quad = Quad(glm::vec4(0.25f, 0.25f, 0.25f, 1.0f));
 	PlayerCamera* m_camera = nullptr;
 	Light* m_light = nullptr;
 	Flashlight* m_flashlight = nullptr;
