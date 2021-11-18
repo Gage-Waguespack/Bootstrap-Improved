@@ -9,6 +9,7 @@ void World::start()
 
 	//Initialize the quad
 	m_quad.onStart();
+	m_quad.setColor(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
 	if (!m_tableDiffuse.load("earth_diffuse.jpg")) {
 		printf("Failed to load texture.\n");
 	}

@@ -28,7 +28,7 @@ Quad::Vertex* Quad::generateVertices(unsigned int& vertexCount)
 	vertices[0].texCoord = { 0.0f, 1.0f };
 	vertices[1].texCoord = { 1.0f, 1.0f };
 	vertices[2].texCoord = { 0.0f, 0.0f };
-	vertices[3].texCoord = { 1.0f, 1.0f };
+	vertices[3].texCoord = { 1.0f, 0.0f };
 
 	return vertices;
 }
